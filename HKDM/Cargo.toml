@@ -1,0 +1,11 @@
+[package]
+name = "HKDM"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+getopts = "*"
+libc = "*"
+env_logger = "*"
+log = "*"
+rdev = "0.5"
