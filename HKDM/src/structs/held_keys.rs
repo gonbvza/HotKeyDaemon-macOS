@@ -1,3 +1,5 @@
+use super::bindings::Binding;
+
 #[derive(Debug)]
 pub struct CurrentKeys {
     pub command: bool,
@@ -35,6 +37,42 @@ impl CurrentKeys {
                 } else {
                     self.key = None
                 }
+            }
+        }
+    }
+
+    pub fn is_equal(&self, binding: &CurrentKeys) -> bool {
+        if self.shift != binding.shift {
+            return false;
+        }
+
+        if self.function != binding.function {
+            return false;
+        }
+
+        if self.control != binding.control {
+            return false;
+        }
+
+        if self.option != binding.option {
+            return false;
+        }
+
+        if self.command != binding.command {
+            return false;
+        }
+
+        if self.key != binding.key {
+            return false;
+        }
+
+        true
+    }
+
+    pub fn check_binding(&self, bindings: &Vec<Binding>) {
+        for bind in bindings {
+            if self.is_equal(&bind.get_binding_combination().unwrap()) {
+                println!("There is a match");
             }
         }
     }

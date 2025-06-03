@@ -9,3 +9,6 @@ libc = "*"
 env_logger = "*"
 log = "*"
 rdev = "0.5"
+serde = {version = "1.0.219", features = ["derive"] }
+toml = "0.8.22"
+

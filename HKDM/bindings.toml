@@ -1,0 +1,17 @@
+[[Bindings]]
+key = 'a'
+modifiers = ['command', 'shift']
+command = ['hello']
+
+[[Bindings]]
+key = 'b'
+modifiers = ['function']
+command = ['rij']
+
+[[Bindings]]
+key = '1'
+modifiers = ['command']
+command = ['rij']
+
+
+

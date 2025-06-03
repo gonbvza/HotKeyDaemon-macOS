@@ -1,8 +1,11 @@
-use crate::structs::held_keys::CurrentKeys;
+use crate::structs::{
+    bindings::{Binding, BindingSet},
+    held_keys::CurrentKeys,
+};
 use rdev::listen;
 use std::sync::{Arc, Mutex};
 
-pub fn log_process() {
+pub fn log_process(bindings: &BindingSet) {
     let current_keys = Arc::new(Mutex::new(CurrentKeys::new()));
 
     let callback = move |event: rdev::Event| -> () {
@@ -12,6 +15,7 @@ pub fn log_process() {
             rdev::EventType::KeyPress(key) => {
                 current_keys.toggle(key, true);
                 current_keys.struct_debug();
+                current_keys.check_binding(&bindings.Bindings);
                 return ();
             }
 
