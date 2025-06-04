@@ -1,12 +1,13 @@
 use crate::structs::{
-    bindings::{Binding, BindingSet},
+    bindings::BindingSet,
     held_keys::CurrentKeys,
 };
 use rdev::listen;
 use std::sync::{Arc, Mutex};
 
-pub fn log_process(bindings: &BindingSet) {
+pub fn log_process(binding_arc: Arc<BindingSet>) {
     let current_keys = Arc::new(Mutex::new(CurrentKeys::new()));
+    let bindings = Arc::new(binding_arc);
 
     let callback = move |event: rdev::Event| -> () {
         let mut current_keys = current_keys.lock().unwrap();
