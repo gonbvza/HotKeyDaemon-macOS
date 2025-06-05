@@ -48,7 +48,6 @@ fn main() {
             }
         }
     } else {
-        println!("Reading the bindings");
         let bindings: BindingSet = read_bindings();
         for bind in &bindings.bindings {
             bind.get_binding_combination().unwrap();
