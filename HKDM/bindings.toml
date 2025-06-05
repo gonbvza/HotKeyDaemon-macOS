@@ -1,17 +1,34 @@
-[[Bindings]]
-key = 'a'
-modifiers = ['command', 'shift']
-command = ['hello']
-
-[[Bindings]]
-key = 'b'
-modifiers = ['function']
-command = ['rij']
-
-[[Bindings]]
+[[bindings]]
 key = '1'
 modifiers = ['command']
-command = ['rij']
+command = ['open', '-a', 'alacritty']
+
+[[bindings]]
+key = '2'
+modifiers = ['command']
+command = ['open', '-a', 'safari']
+
+
+[[bindings]]
+key = '3'
+modifiers = ['command']
+command = ['open', '-a', 'terminal']
+
+[[bindings]]
+key = 'Return'
+modifiers = ['command']
+command = ['open', '-na', 'terminal']
+
+[[bindings]]
+key = 'g'
+modifiers = ['command']
+command = ['open', 'http://google.com']
+
+[[bindings]]
+key = 'j'
+modifiers = ['command']
+command = ['open', 'http://google.com']
+
 
 
 

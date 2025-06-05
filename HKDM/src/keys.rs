@@ -1,5 +1,8 @@
 pub fn to_key(key: &String) -> Option<rdev::Key> {
+    // Match keys to an enum value
+
     match key.as_str() {
+        "Return" => return Some(rdev::Key::Return),
         "1" => return Some(rdev::Key::Num1),
         "2" => return Some(rdev::Key::Num2),
         "3" => return Some(rdev::Key::Num3),

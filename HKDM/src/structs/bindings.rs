@@ -3,7 +3,7 @@ use crate::keys::to_key;
 
 #[derive(Debug, serde::Deserialize)]
 pub struct BindingSet {
-    pub Bindings: Vec<Binding>,
+    pub bindings: Vec<Binding>,
 }
 
 #[derive(Debug, serde::Deserialize)]

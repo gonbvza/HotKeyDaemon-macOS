@@ -1,3 +1,5 @@
+use std::process::Command;
+
 use super::bindings::Binding;
 
 #[derive(Debug)]
@@ -7,7 +9,6 @@ pub struct CurrentKeys {
     pub option: bool,
     pub control: bool,
     pub function: bool,
-    // Setting the key to be a key enum from rdev
     pub key: Option<rdev::Key>,
 }
 
@@ -72,7 +73,10 @@ impl CurrentKeys {
     pub fn check_binding(&self, bindings: &Vec<Binding>) {
         for bind in bindings {
             if self.is_equal(&bind.get_binding_combination().unwrap()) {
-                println!("There is a match");
+                Command::new("sh")
+                    .arg("-c")
+                    .arg(bind.command.join(" "))
+                    .spawn();
             }
         }
     }
