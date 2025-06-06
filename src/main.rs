@@ -1,5 +1,4 @@
 use clap::Parser;
-use log::{info, warn};
 use std::sync::Arc;
 use structs::bindings::BindingSet;
 use toml::from_str;
